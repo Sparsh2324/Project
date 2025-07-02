@@ -1,18 +1,13 @@
-#Build NodeJS image for javascript
+#Install alpine base node image
 FROM node:alpine3.21
 
-#Create working directory
+#create directory to store application data
 WORKDIR /app
 
-#Copy data from currect working directory
+#copy current directory data to created directory
 COPY . /app
 
-#install dependency applications
+#Run & install dependency application
 RUN npm init -y && \
     npm install
 
-#Expose network port which we want to access.
-EXPOSE	3000
-
-#execute command after container create
-CMD ["node", "index.js"]

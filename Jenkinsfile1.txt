@@ -8,12 +8,11 @@ pipeline {
 	}
         		
     stages {
-        stage('Build project') {
+        stage('Checkout') {
             steps {
-				//mention github repository details using pipeline syntax
-				sh "mvn clean install"                
+                git branch: 'main', url: 'https://github.com/yourusername/your-repo.git'
             }
-        }
+		}		
         stage('Build Docker image') {
             steps {
 				script{

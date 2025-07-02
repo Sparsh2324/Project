@@ -1,0 +1,11 @@
+Create JavaScript code
+	index.js
+	
+Push to GitHub
+	Create new public repo at github and sync with local repo
+	push all files into github
+	
+Create Dockerfile to create docker image
+	create dockerfile to install node
+	
+Create Jenkinsfile to create docker image & Push to dockerhub
