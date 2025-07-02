@@ -25,8 +25,9 @@ pipeline {
 					withCredentials([string(credentialsId: 'dockerpass', variable: 'dockerpass')]) {
 					sh "docker login -u sparsh2324 -p ${dockerpass}"
 }
-					sh "docker push <dockerhubname/imagename>"
-            }
-        }
-    }
+					sh "docker push sparsh2324/nodejs_alpine"
+				}
+			}
+		}
+	}
 }

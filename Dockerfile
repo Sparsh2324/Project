@@ -11,3 +11,4 @@ COPY . /app
 RUN npm init -y && \
     npm install
 
+CMD ["start" "npm"]
