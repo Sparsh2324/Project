@@ -7,6 +7,9 @@ WORKDIR /app
 #copy current directory data to created directory
 COPY . /app
 
+#expose network for application
+EXPOSE 3000
+
 #Run & install dependency application
 RUN npm init -y && \
     npm install
