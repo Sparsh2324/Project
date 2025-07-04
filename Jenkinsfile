@@ -14,18 +14,17 @@ pipeline {
         stage('Build Docker image') {
             steps {
 				script{
-					sh "docker build -t nodejs_alpine ."
-					sh "docker start -it -d nodejs_alpine"
+					sh "docker build -t sparsh2324/nodejs_alpine:latest ."
 				}
             }
         }
         stage('push docker image to dockerhub') {
             steps {
                 script{
-					withCredentials([string(credentialsId: 'dockerpass', variable: 'dockerpass')]) {
+					withCredentials([string(credentialsId: 'dockerpassword', variable: 'dockerpass')]) {
 					sh "docker login -u sparsh2324 -p ${dockerpass}"
 }
-					sh "docker push sparsh2324/nodejs_alpine"
+					sh "docker push sparsh2324/nodejs_alpine:latest"
 				}
 			}
 		}
