@@ -28,5 +28,13 @@ pipeline {
 				}
 			}
 		}
+		stage('run docker image'){
+		    steps{
+		        script{
+		            sh 'docker run -it -d --name nodejs_alpine sparsh2324/nodejs_alpine'
+		            sh 'docker start nodejs_alpine'
+		        }
+		    }
+		}
 	}
 }
